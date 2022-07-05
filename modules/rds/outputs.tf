@@ -1,0 +1,9 @@
+output "username" { value = aws_db_instance.main.username }
+output "password" { value = aws_db_instance.main.password }
+output "address" { value = aws_db_instance.main.address }
+output "resource_id" { value = aws_db_instance.main.resource_id }
+output "arn" { value = aws_db_instance.main.arn }
+output "name" { value = aws_db_instance.main.name }
+output "password_parameter_arn" { value = aws_ssm_parameter.rds-password.arn }
+output "username_parameter_arn" { value = aws_ssm_parameter.rds-username.arn }
+output "address_parameter_arn" { value = aws_ssm_parameter.rds-address.arn }

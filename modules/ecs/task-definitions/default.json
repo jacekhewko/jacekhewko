@@ -1,0 +1,29 @@
+[{
+    "name": "${name}",
+    "image": "${image}",
+    "cpu": ${cpu},
+    "memory": ${mem},
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": ${container_port},
+        "protocol": "tcp",
+        "hostPort": ${container_port}
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+          "awslogs-group": "${log_group}",
+          "awslogs-region": "eu-west-2",
+          "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "healthCheck": {
+      "retries": 10,
+      "command": [ "CMD-SHELL", "true || exit 1" ],
+      "timeout": 10,
+      "interval": 30,
+      "startPeriod": 300
+    }
+}]
